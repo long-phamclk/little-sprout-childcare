@@ -1,25 +1,33 @@
 import React from "react";
 import styled from "styled-components";
+import Header from "../../components/Header";
+import BackGroundImg from "../../components/BackGroundImg";
+import Footer from "../../components/Footer";
 
 function Body() {
   return (
-    <Wrapper>
-      <Heading>Welcome to Little Sprouts Childcare Center</Heading>
-      <Article>
-        Welcome, Educators! At Little Sprouts Childcare Child Care Center, we
-        provide a nurturing environment for children to learn, grow, and thrive.
-        Our experienced staff is dedicated to helping each child reach their
-        full potential through engaging activities, hands-on learning, and play.
-        As an educator, you play a critical role in shaping young minds, and
-        we're excited to work with you to provide the best possible care for the
-        children in our community.
-      </Article>
-      <LineBox></LineBox>
-      <ListButtonWrapper>
-        <OpeningListButton>Opening Checklist</OpeningListButton>
-        <ClosingListButton>Closing Checklist</ClosingListButton>
-      </ListButtonWrapper>
-    </Wrapper>
+    <>
+      <Header />
+      <BackGroundImg />
+      <Wrapper>
+        <Heading>Welcome to Little Sprouts Childcare Center</Heading>
+        <Article>
+          Welcome, Educators! At Little Sprouts Childcare Child Care Center, we
+          provide a nurturing environment for children to learn, grow, and
+          thrive. Our experienced staff is dedicated to helping each child reach
+          their full potential through engaging activities, hands-on learning,
+          and play. As an educator, you play a critical role in shaping young
+          minds, and we're excited to work with you to provide the best possible
+          care for the children in our community.
+        </Article>
+        <LineBox></LineBox>
+        <ListButtonWrapper>
+          <OpeningListButton>Opening Checklist</OpeningListButton>
+          <ClosingListButton>Closing Checklist</ClosingListButton>
+        </ListButtonWrapper>
+      </Wrapper>
+      <Footer />
+    </>
   );
 }
 
@@ -43,7 +51,7 @@ const Article = styled.article`
   font-size: 1rem;
   font-family: "Dosis", sans-serif;
   font-weight: 500;
-  width: 900px;
+  max-width: 900px;
   margin: 0 auto;
   margin-top: 20px;
   text-align: center;
@@ -59,7 +67,7 @@ const LineBox = styled.div`
 
 const ListButtonWrapper = styled.div`
   display: flex;
-  width: 650px;
+  max-width: 650px;
   align-items: center;
   justify-content: space-between;
   margin: auto;

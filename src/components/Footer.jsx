@@ -26,10 +26,12 @@ const FooterBox = styled.footer`
   background-color: hsl(16deg 36% 86%);
   margin-top: 50px;
   padding-top: 25px;
+  position: fixed;
+  bottom: 0;
 `;
 
 const Wrapper = styled.div`
-  width: 900px;
+  max-width: 900px;
   height: 50px;
   margin: auto;
   justify-content: space-between;

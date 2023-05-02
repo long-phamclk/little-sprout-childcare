@@ -1,17 +1,26 @@
 import React from "react";
-import Nav from "./components/Nav";
-import BackGroundImg from "./components/BackGroundImg";
-import Body from "./components/Body";
-import Footer from "./components/Footer";
-import "./reset.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import "./App.css";
+import Home from "./pages/home";
+import Login from "./pages/login";
+import CheckList from "./pages/checklist";
+import Notes from "./pages/notes";
+import History from "./pages/history";
 
 function App() {
   return (
     <>
-      <Nav />
-      <BackGroundImg />
-      <Body />
-      <Footer />
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/history" element={<History />} />
+          <Route path="/checklist" element={<CheckList />} />
+          <Route path="/notes" element={<Notes />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

@@ -8,11 +8,21 @@ function Nav() {
         <img src="src\assets\logo.png" alt="This is a logo" />
       </Logo>
       <NavButtonWrapper>
-        <NavButton>Home</NavButton>
-        <NavButton>Checklist</NavButton>
-        <NavButton>Notes</NavButton>
-        <NavButton>History</NavButton>
-        <NavButton>Login</NavButton>
+        <NavButton>
+          <a href="/">Home</a>
+        </NavButton>
+        <NavButton>
+          <a href="/checklist">Checklist</a>
+        </NavButton>
+        <NavButton>
+          <a href="notes">Notes</a>
+        </NavButton>
+        <NavButton>
+          <a href="history">History</a>
+        </NavButton>
+        <NavButton>
+          <a href="login">Login</a>
+        </NavButton>
       </NavButtonWrapper>
     </NavBar>
   );
@@ -25,6 +35,10 @@ const NavBar = styled.nav`
   height: 120px;
   justify-content: space-between;
   align-items: center;
+
+  @media screen and (max-width: 400px) {
+    flex-direction: column;
+  }
 `;
 
 const Logo = styled.div`
