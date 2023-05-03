@@ -1,5 +1,5 @@
-import styled from "styled-components";
 import React from "react";
+import styled from "styled-components";
 
 function Nav() {
   return (
@@ -36,8 +36,8 @@ const NavBar = styled.nav`
   justify-content: space-between;
   align-items: center;
 
-  @media screen and (max-width: 400px) {
-    flex-direction: column;
+  a {
+    text-decoration: none;
   }
 `;
 

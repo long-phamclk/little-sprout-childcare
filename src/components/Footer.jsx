@@ -3,8 +3,8 @@ import styled from "styled-components";
 
 function Footer() {
   return (
-    <FooterBox>
-      <Wrapper>
+    <Wrapper>
+      <FooterBox>
         <Company>
           Copy right 2023 <br /> Little Sprout Childcare
         </Company>
@@ -15,22 +15,21 @@ function Footer() {
           <img src="src\assets\email.png" alt="this is an email icon" />
           chiliki.long@gmail.com
         </Contact>
-      </Wrapper>
-    </FooterBox>
+      </FooterBox>
+    </Wrapper>
   );
 }
 
-const FooterBox = styled.footer`
+const Wrapper = styled.footer`
   width: 100%;
   height: 100px;
   background-color: hsl(16deg 36% 86%);
   margin-top: 50px;
   padding-top: 25px;
-  position: fixed;
   bottom: 0;
 `;
 
-const Wrapper = styled.div`
+const FooterBox = styled.div`
   max-width: 900px;
   height: 50px;
   margin: auto;
