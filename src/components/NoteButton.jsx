@@ -1,7 +1,17 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { Box, Button, Modal, Typography } from "@mui/material";
-import modalStyle from "../utils/modalStyle";
+import {
+  Box,
+  Button,
+  Modal,
+  Typography,
+  TextField,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+} from "@mui/material";
 import buttonStyle from "../utils/buttonStyle";
 
 function NoteButton() {
@@ -11,7 +21,7 @@ function NoteButton() {
 
   return (
     <Wrapper>
-      <Button sx={buttonStyle} onClick={handleOpen}>
+      {/* <Button sx={buttonStyle} onClick={handleOpen}>
         Leave a note
       </Button>
       <Modal
@@ -28,7 +38,32 @@ function NoteButton() {
             Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
           </Typography>
         </Box>
-      </Modal>
+      </Modal> */}
+
+      <Button sx={buttonStyle} onClick={handleOpen}>
+        Leave a note
+      </Button>
+      <Dialog open={open} onClose={handleClose}>
+        <DialogTitle>Note</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            Please leave a note here if there is any concerns to raise
+          </DialogContentText>
+          <TextField
+            autoFocus
+            margin="dense"
+            id="name"
+            label=""
+            type="text"
+            fullWidth
+            variant="standard"
+          />
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose}>Cancel</Button>
+          <Button onClick={handleClose}>Submit</Button>
+        </DialogActions>
+      </Dialog>
     </Wrapper>
   );
 }

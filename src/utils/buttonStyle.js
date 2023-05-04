@@ -5,6 +5,7 @@ const buttonStyle = {
   lineHeight: " ${26 / 16}",
   width: "100%",
   color: "black",
+  // border: "none",
 };
 
 export default buttonStyle;
