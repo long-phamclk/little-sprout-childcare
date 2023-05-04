@@ -11,17 +11,16 @@ import NoteButton from "../../components/NoteButton";
 function CheckList() {
   const [checkOptions, setCheckOptions] = useState(openCLOption);
 
-  const handleChange = (checkListIndex) => {
+  const handleChange = (index) => {
     // check the prop we pass in
     // console.log("index", checkListIndex);
 
     // change the boolean value when click and pass the object back
-    checkOptions[checkListIndex].checked =
-      !checkOptions[checkListIndex].checked;
-    setCheckOptions({ ...checkOptions });
+    checkOptions[index].checked = !checkOptions[index].checked;
+    setCheckOptions([...checkOptions]);
 
     // call out the table of objects from the openCLOption array
-    // console.table(checkOptions);
+    console.table(checkOptions);
   };
 
   return (
@@ -32,13 +31,13 @@ function CheckList() {
         <Heading>Opening checklist</Heading>
         {/* <FormGroupWrapper> */}
         <StyledFormGroup>
-          {openCLOption.map((option) => (
+          {openCLOption.map((option, index) => (
             <FormControlLabel
               key={option.id}
               label={option.title}
               control={<Checkbox checked={option.checked} />}
               onChange={() => {
-                handleChange(option.id);
+                handleChange(index);
               }}
             />
           ))}

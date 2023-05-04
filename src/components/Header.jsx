@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 function Nav() {
   return (
-    <NavBar>
+    <Wrapper>
       <Logo>
         <img src="src\assets\logo.png" alt="This is a logo" />
       </Logo>
@@ -15,20 +15,20 @@ function Nav() {
           <a href="/checklist">Checklist</a>
         </NavButton>
         <NavButton>
-          <a href="notes">Notes</a>
+          <a href="/notes">Notes</a>
         </NavButton>
         <NavButton>
-          <a href="history">History</a>
+          <a href="/history">History</a>
         </NavButton>
         <NavButton>
-          <a href="login">Login</a>
+          <a href="/login">Login</a>
         </NavButton>
       </NavButtonWrapper>
-    </NavBar>
+    </Wrapper>
   );
 }
 
-const NavBar = styled.nav`
+const Wrapper = styled.nav`
   display: flex;
   background-color: HSL(16deg, 36%, 86%);
   width: 100%;
@@ -50,7 +50,7 @@ const Logo = styled.div`
 
 const NavButtonWrapper = styled.ul`
   display: flex;
-  width: auto;
+  max-width: 100%;
 `;
 
 const NavButton = styled.li`

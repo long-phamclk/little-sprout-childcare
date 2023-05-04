@@ -1,6 +1,6 @@
 const openCLOption = [
   {
-    id: 0,
+    id: 100,
     title: "Unlock and open all doors and gates.",
     checked: false,
   },
