@@ -1,0 +1,56 @@
+import React, { useState } from "react";
+import styled from "styled-components";
+import { Box, Button, Modal, Typography } from "@mui/material";
+import modalStyle from "../utils/modalStyle";
+import buttonStyle from "../utils/buttonStyle";
+
+function NoteButton() {
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  return (
+    <Wrapper>
+      <Button sx={buttonStyle} onClick={handleOpen}>
+        Leave a note
+      </Button>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={modalStyle}>
+          <Typography id="modal-modal-title" variant="h6" component="h2">
+            Text in a modal
+          </Typography>
+          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+          </Typography>
+        </Box>
+      </Modal>
+    </Wrapper>
+  );
+}
+
+const Wrapper = styled.div`
+  width: 200px;
+  max-height: 40px;
+  background-color: hsl(0deg 0% 85%);
+  border-radius: 10px;
+  display: flex;
+  margin-left: 30px;
+`;
+
+//  attempt to style modal button with styled component
+
+// const StyledButton = styled(Button)`
+//   font-family: "Dosis", sans-serif;
+//   font-size: ${20 / 16}rem;
+//   font-weight: 600;
+//   line-height: ${26 / 16};
+//   width: 100%;
+//   color: black;
+// `;
+
+export default NoteButton;
