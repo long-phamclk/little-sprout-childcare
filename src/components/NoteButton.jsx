@@ -16,7 +16,21 @@ function NoteButton() {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  const [value, setValue] = useState("");
+  const [note, setNote] = useState([]);
+  const [value, setValue] = useState({});
+
+  const handleChange = (event) => {
+    const savedNotes = event.target.value;
+    setValue({ ...value, savedNotes });
+  };
+
+  const handleSubmit = () => {
+    const newNote = [...note, value];
+    localStorage.setItem("notelist", JSON.stringify(newNote));
+
+    setNote(newNote);
+    handleClose();
+  };
 
   // useEffect(() => {
   //   const storedValue = localStorage.getItem("notes");
@@ -24,16 +38,6 @@ function NoteButton() {
   //     setValue(storedValue);
   //   }
   // }, []);
-
-  const handleSubmit = () => {
-    localStorage.setItem("notes", value);
-    handleClose();
-  };
-
-  const handleChange = (event) => {
-    const newValue = event.target.value;
-    setValue(newValue);
-  };
 
   return (
     <Wrapper>
