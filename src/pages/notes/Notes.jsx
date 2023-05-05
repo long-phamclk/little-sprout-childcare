@@ -3,8 +3,15 @@ import styled from "styled-components";
 import Header from "../../components/Header";
 import BackGroundImg from "../../components/BackGroundImg";
 import Footer from "../../components/Footer";
-import { List, ListItem, ListItemText } from "@mui/material";
+import {
+  List,
+  ListItem,
+  ListItemText,
+  ListItemSecondaryAction,
+  IconButton,
+} from "@mui/material";
 import { useState, useEffect } from "react";
+import RemoveIcon from "@mui/icons-material/Remove";
 
 function Notes() {
   // const storedNotes = JSON.parse(localStorage.getItem("notelist"));
@@ -31,6 +38,15 @@ function Notes() {
               {notes.map((note, index) => (
                 <ListItem key={index}>
                   <ListItemText primary={note.savedNotes} />
+                  <ListItemSecondaryAction>
+                    <IconButton
+                      edge="end"
+                      aria-label="delete"
+                      onClick={() => handleRemoveItem(index)}
+                    >
+                      <RemoveIcon />
+                    </IconButton>
+                  </ListItemSecondaryAction>
                 </ListItem>
               ))}
             </List>
