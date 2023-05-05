@@ -1,10 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import {
-  Box,
   Button,
-  Modal,
-  Typography,
   TextField,
   Dialog,
   DialogActions,
@@ -15,9 +12,28 @@ import {
 import buttonStyle from "../utils/buttonStyle";
 
 function NoteButton() {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  const [value, setValue] = useState("");
+
+  // useEffect(() => {
+  //   const storedValue = localStorage.getItem("notes");
+  //   if (storedValue) {
+  //     setValue(storedValue);
+  //   }
+  // }, []);
+
+  const handleSubmit = () => {
+    localStorage.setItem("notes", value);
+    handleClose();
+  };
+
+  const handleChange = (event) => {
+    const newValue = event.target.value;
+    setValue(newValue);
+  };
 
   return (
     <Wrapper>
@@ -38,11 +54,12 @@ function NoteButton() {
             type="text"
             fullWidth
             variant="standard"
+            onChange={handleChange}
           />
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Cancel</Button>
-          <Button onClick={handleClose}>Submit</Button>
+          <Button onClick={handleSubmit}>Submit</Button>
         </DialogActions>
       </Dialog>
     </Wrapper>

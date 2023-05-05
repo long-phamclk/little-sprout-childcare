@@ -20,7 +20,7 @@ function CheckList() {
     setCheckOptions([...checkOptions]);
 
     // call out the table of objects from the openCLOption array
-    console.table(checkOptions);
+    // console.table(checkOptions);
   };
 
   return (
@@ -29,7 +29,6 @@ function CheckList() {
       <BackGroundImg />
       <Wrapper>
         <Heading>Opening checklist</Heading>
-        {/* <FormGroupWrapper> */}
         <StyledFormGroup>
           {openCLOption.map((option, index) => (
             <FormControlLabel
@@ -42,7 +41,6 @@ function CheckList() {
             />
           ))}
         </StyledFormGroup>
-        {/* </FormGroupWrapper> */}
         <ButtonWrapper>
           <NoteButton />
           <SubmitButton />
