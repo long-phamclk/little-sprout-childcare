@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import {
   Button,
@@ -10,34 +10,22 @@ import {
   DialogTitle,
 } from "@mui/material";
 import buttonStyle from "../utils/buttonStyle";
+import noteService from "../helpers/noteservices";
 
 function NoteButton() {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const [note, setNote] = useState("");
 
-  const [note, setNote] = useState([]);
-  const [value, setValue] = useState({});
-
-  const handleChange = (event) => {
-    const savedNotes = event.target.value;
-    setValue({ ...value, savedNotes });
+  const noteChanged = (e) => {
+    setNote(e.target.value);
   };
 
   const handleSubmit = () => {
-    const newNote = [...note, value];
-    localStorage.setItem("notelist", JSON.stringify(newNote));
-
-    setNote(newNote);
+    noteService.addNote(note);
     handleClose();
   };
-
-  // useEffect(() => {
-  //   const storedValue = localStorage.getItem("notes");
-  //   if (storedValue) {
-  //     setValue(storedValue);
-  //   }
-  // }, []);
 
   return (
     <Wrapper>
@@ -58,7 +46,7 @@ function NoteButton() {
             type="text"
             fullWidth
             variant="standard"
-            onChange={handleChange}
+            onChange={noteChanged}
           />
         </DialogContent>
         <DialogActions>
@@ -78,16 +66,5 @@ const Wrapper = styled.div`
   display: flex;
   margin-left: 30px;
 `;
-
-//  attempt to style modal button with styled component
-
-// const StyledButton = styled(Button)`
-//   font-family: "Dosis", sans-serif;
-//   font-size: ${20 / 16}rem;
-//   font-weight: 600;
-//   line-height: ${26 / 16};
-//   width: 100%;
-//   color: black;
-// `;
 
 export default NoteButton;

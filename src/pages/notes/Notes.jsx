@@ -14,15 +14,19 @@ import { useState, useEffect } from "react";
 import RemoveIcon from "@mui/icons-material/Remove";
 
 function Notes() {
-  // const storedNotes = JSON.parse(localStorage.getItem("notelist"));
+  // add notes from localStorage if there is any
   const [notes, setNotes] = useState([]);
-
   useEffect(() => {
     const storedItems = localStorage.getItem("notelist");
     if (storedItems) {
       setNotes(JSON.parse(storedItems));
     }
   }, []);
+
+  function handleRemoveItem(index) {
+    notes.splice(index, 1);
+    setNotes([...notes]);
+  }
 
   return (
     <>
