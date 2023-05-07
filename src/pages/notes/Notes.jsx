@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import Header from "../../components/Header";
 import BackGroundImg from "../../components/BackGroundImg";
@@ -12,21 +11,29 @@ import {
 } from "@mui/material";
 import { useState, useEffect } from "react";
 import RemoveIcon from "@mui/icons-material/Remove";
+import noteService from "../../helpers/noteservices";
 
 function Notes() {
   // add notes from localStorage if there is any
-  const [notes, setNotes] = useState([]);
-  useEffect(() => {
-    const storedItems = localStorage.getItem("notelist");
-    if (storedItems) {
-      setNotes(JSON.parse(storedItems));
-    }
-  }, []);
+  // const [notes, setNotes] = useState([]);
+  // useEffect(() => {
+  //   const storedItems = localStorage.getItem("notelist");
+  //   if (storedItems) {
+  //     setNotes(JSON.parse(storedItems));
+  //   }
+  // }, []);
 
-  function handleRemoveItem(index) {
-    notes.splice(index, 1);
-    setNotes([...notes]);
-  }
+  // function handleRemoveItem(index) {
+  //   notes.splice(index, 1);
+  //   setNotes([...notes]);
+  // }
+
+  const storedNotes = noteService.getNotes();
+  const [notes, setNotes] = useState(storedNotes);
+
+  const handleRemoveItem = (index) => {
+    setNotes(notes.splice(index, 1));
+  };
 
   return (
     <>
@@ -35,26 +42,22 @@ function Notes() {
       <Wrapper>
         <Heading>Notes</Heading>
         <NoteWrapper>
-          {notes.length === 0 ? (
-            <p>There is no note</p>
-          ) : (
-            <List aria-labelledby="basic-list-demo">
-              {notes.map((note, index) => (
-                <ListItem key={index}>
-                  <ListItemText primary={note.savedNotes} />
-                  <ListItemSecondaryAction>
-                    <IconButton
-                      edge="end"
-                      aria-label="delete"
-                      onClick={() => handleRemoveItem(index)}
-                    >
-                      <RemoveIcon />
-                    </IconButton>
-                  </ListItemSecondaryAction>
-                </ListItem>
-              ))}
-            </List>
-          )}
+          <List aria-labelledby="basic-list-demo">
+            {storedNotes.map((note, index) => (
+              <ListItem key={note.id}>
+                <ListItemText primary={note.savedNote} />
+                <ListItemSecondaryAction>
+                  <IconButton
+                    edge="end"
+                    aria-label="delete"
+                    onClick={() => handleRemoveItem(index)}
+                  >
+                    <RemoveIcon />
+                  </IconButton>
+                </ListItemSecondaryAction>
+              </ListItem>
+            ))}
+          </List>
         </NoteWrapper>
       </Wrapper>
       <Footer />

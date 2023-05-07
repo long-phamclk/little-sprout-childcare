@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import buttonStyle from "../utils/buttonStyle";
 import { Button } from "@mui/material";

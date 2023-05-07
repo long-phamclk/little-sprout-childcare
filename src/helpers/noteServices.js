@@ -1,7 +1,7 @@
 const NoteKey = "NoteList";
 let notes = [];
 
-function persitToLocationStorage() {
+function persistToLocationStorage() {
   localStorage.setItem(NoteKey, JSON.stringify(notes));
 }
 
@@ -13,7 +13,7 @@ function addNote(note) {
   loadNotesFromLocalStorage();
   var max = notes.length == 0 ? 0 : Math.max(...notes.map((x) => x.id || 0));
   notes.push({ id: max + 1, savedNote: note, dateCreated: new Date() });
-  persitToLocationStorage();
+  persistToLocationStorage();
 }
 
 function getNotes() {
