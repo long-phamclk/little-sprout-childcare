@@ -18,9 +18,7 @@ function SubmitButton() {
   });
 
   const handleCLick = (event) => {
-    const lala = submitService.addSubmit(
-      "Open checklist is submitted at " + new Date()
-    );
+    submitService.addSubmit("Open checklist is submitted at " + new Date());
   };
 
   return (
