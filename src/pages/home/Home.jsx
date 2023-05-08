@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Header from "../../components/Header";
 import BackGroundImg from "../../components/BackGroundImg";
 import Footer from "../../components/Footer";
+import { Link } from "react-router-dom";
 
 function Body() {
   return (
@@ -21,8 +22,12 @@ function Body() {
         </Article>
         <LineBox></LineBox>
         <ListButtonWrapper>
-          <OpeningListButton>Opening Checklist</OpeningListButton>
-          <ClosingListButton>Closing Checklist</ClosingListButton>
+          <OpeningListButton to="/openchecklist">
+            Opening Checklist
+          </OpeningListButton>
+          <ClosingListButton to="/closechecklist">
+            Closing Checklist
+          </ClosingListButton>
         </ListButtonWrapper>
       </Wrapper>
       <Footer />
@@ -73,7 +78,7 @@ const ListButtonWrapper = styled.div`
   margin-top: 50px;
 `;
 
-const OpeningListButton = styled.div`
+const OpeningListButton = styled(Link)`
   font-family: "Dosis", sans-serif;
   font-size: ${25 / 16}rem;
   font-weight: 600;
@@ -82,9 +87,10 @@ const OpeningListButton = styled.div`
   width: 285px;
   border-radius: 10px;
   text-align: center;
+  text-decoration: none;
 `;
 
-const ClosingListButton = styled.div`
+const ClosingListButton = styled(Link)`
   font-family: "Dosis", sans-serif;
   font-size: ${25 / 16}rem;
   font-weight: 600;
@@ -93,6 +99,7 @@ const ClosingListButton = styled.div`
   width: 285px;
   border-radius: 10px;
   text-align: center;
+  text-decoration: none;
 `;
 
 export default Body;
