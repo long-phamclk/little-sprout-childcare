@@ -17,8 +17,14 @@ function Notes() {
   const storedNotes = noteService.getNotes();
   const [notes, setNotes] = useState(storedNotes);
 
-  const handleRemoveItem = (id) => {
+  const handleRemoveItem = (id, index) => {
     setNotes(notes.filter((note) => note.id !== id));
+
+    // if the item is found, remove it from the array and save the update array
+    if (index !== -1) {
+      notes.splice(index, 1);
+      localStorage.setItem("NoteList", JSON.stringify(notes));
+    }
   };
 
   return (
@@ -29,14 +35,14 @@ function Notes() {
         <Heading>Notes</Heading>
         <NoteWrapper>
           <List aria-labelledby="basic-list-demo">
-            {notes.map((note) => (
+            {notes.map((note, index) => (
               <ListItem key={note.id}>
                 <ListItemText primary={note.savedNote} />
                 <ListItemSecondaryAction>
                   <IconButton
                     edge="end"
                     aria-label="delete"
-                    onClick={() => handleRemoveItem(note.id)}
+                    onClick={() => handleRemoveItem(note.id, index)}
                   >
                     <RemoveIcon />
                   </IconButton>

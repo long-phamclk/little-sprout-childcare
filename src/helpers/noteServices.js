@@ -25,4 +25,5 @@ const noteService = {
   addNote,
   getNotes,
 };
+
 export default noteService;
