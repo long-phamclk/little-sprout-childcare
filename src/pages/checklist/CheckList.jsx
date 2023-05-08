@@ -20,7 +20,7 @@ function CheckList() {
     setCheckOptions([...checkOptions]);
 
     // call out the table of objects from the openCLOption array
-    // console.table(checkOptions);
+    console.table(checkOptions);
   };
 
   return (

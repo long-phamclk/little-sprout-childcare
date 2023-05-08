@@ -1,11 +1,26 @@
 import styled from "styled-components";
 import buttonStyle from "../utils/buttonStyle";
 import { Button } from "@mui/material";
+import openCLOption from "../utils/openCheckList";
+import { useState, useEffect } from "react";
 
 function SubmitButton() {
+  const [isDisabled, setIsDisabled] = useState(true);
+
+  // make the submit button available when all the options is ticked
+  useEffect(() => {
+    if (openCLOption.every((option) => option.checked === true)) {
+      setIsDisabled(false);
+    } else {
+      setIsDisabled(true);
+    }
+  });
+
   return (
     <Wrapper>
-      <Button sx={buttonStyle}>Submit</Button>
+      <Button sx={buttonStyle} disabled={isDisabled}>
+        Submit
+      </Button>
     </Wrapper>
   );
 }
