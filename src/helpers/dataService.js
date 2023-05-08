@@ -1,4 +1,4 @@
-const DataKey = "NoteList";
+const DataKey = "DataList";
 let data = [];
 
 function persistToLocationStorage() {

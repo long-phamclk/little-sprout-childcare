@@ -12,9 +12,6 @@ function CloseCheckList() {
   const [closeOptions, setcloseOptions] = useState(closeCLOption);
 
   const handleChange = (index) => {
-    // check the prop we pass in
-    // console.log("index", checkListIndex);
-
     // change the boolean value when click and pass the object back
     closeOptions[index].checked = !closeOptions[index].checked;
     setcloseOptions([...closeOptions]);
