@@ -3,6 +3,7 @@ import buttonStyle from "../utils/buttonStyle";
 import { Button } from "@mui/material";
 import openCLOption from "../utils/openCheckList";
 import { useState, useEffect } from "react";
+import submitService from "../helpers/submitService";
 
 function SubmitButton() {
   const [isDisabled, setIsDisabled] = useState(true);
@@ -17,7 +18,9 @@ function SubmitButton() {
   });
 
   const handleCLick = (event) => {
-    console.log(event);
+    const lala = submitService.addSubmit(
+      "Open checklist is submitted at " + new Date()
+    );
   };
 
   return (
