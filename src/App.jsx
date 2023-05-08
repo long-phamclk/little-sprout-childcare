@@ -6,6 +6,7 @@ import Login from "./pages/login";
 import CheckList from "./pages/checklist";
 import Notes from "./pages/notes";
 import History from "./pages/history";
+import CloseCheckList from "./pages/closechecklist";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/history" element={<History />} />
           <Route path="/checklist" element={<CheckList />} />
+          <Route path="/closechecklist" element={<CloseCheckList />} />
           <Route path="/notes" element={<Notes />} />
         </Routes>
       </BrowserRouter>

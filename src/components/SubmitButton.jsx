@@ -16,9 +16,13 @@ function SubmitButton() {
     }
   });
 
+  const handleCLick = (event) => {
+    console.log(event);
+  };
+
   return (
     <Wrapper>
-      <Button sx={buttonStyle} disabled={isDisabled}>
+      <Button sx={buttonStyle} disabled={isDisabled} onClick={handleCLick}>
         Submit
       </Button>
     </Wrapper>

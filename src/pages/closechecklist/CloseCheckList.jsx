@@ -4,23 +4,23 @@ import Header from "../../components/Header";
 import BackGroundImg from "../../components/BackGroundImg";
 import Footer from "../../components/Footer";
 import { FormControlLabel, Checkbox, FormGroup } from "@mui/material";
-import openCLOption from "../../utils/openCheckList";
+import closeCLOption from "../../utils/closeCheckList";
 import SubmitButton from "../../components/SubmitButton";
 import NoteButton from "../../components/NoteButton";
 
-function CheckList() {
-  const [checkOptions, setCheckOptions] = useState(openCLOption);
+function CloseCheckList() {
+  const [closeOptions, setcloseOptions] = useState(closeCLOption);
 
   const handleChange = (index) => {
     // check the prop we pass in
     // console.log("index", checkListIndex);
 
     // change the boolean value when click and pass the object back
-    checkOptions[index].checked = !checkOptions[index].checked;
-    setCheckOptions([...checkOptions]);
+    closeOptions[index].checked = !closeOptions[index].checked;
+    setcloseOptions([...closeOptions]);
 
-    // call out the table of objects from the openCLOption array
-    // console.table(checkOptions);
+    // call out the table of objects from the closeCLOption array
+    // console.table(closeOptions);
   };
 
   return (
@@ -28,9 +28,9 @@ function CheckList() {
       <Header />
       <BackGroundImg />
       <Wrapper>
-        <Heading>Opening checklist</Heading>
+        <Heading>Closing checklist</Heading>
         <StyledFormGroup>
-          {openCLOption.map((option, index) => (
+          {closeCLOption.map((option, index) => (
             <FormControlLabel
               key={option.id}
               label={option.title}
@@ -83,4 +83,4 @@ const ButtonWrapper = styled.div`
   margin-top: 25px;
 `;
 
-export default CheckList;
+export default CloseCheckList;

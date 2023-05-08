@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import {
   Button,
@@ -10,7 +10,7 @@ import {
   DialogTitle,
 } from "@mui/material";
 import buttonStyle from "../utils/buttonStyle";
-import noteService from "../helpers/noteservices";
+import noteService from "../helpers/noteService";
 
 function NoteButton() {
   const [open, setOpen] = useState(false);
