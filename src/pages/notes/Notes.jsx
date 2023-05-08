@@ -14,25 +14,11 @@ import RemoveIcon from "@mui/icons-material/Remove";
 import noteService from "../../helpers/noteservices";
 
 function Notes() {
-  // add notes from localStorage if there is any
-  // const [notes, setNotes] = useState([]);
-  // useEffect(() => {
-  //   const storedItems = localStorage.getItem("notelist");
-  //   if (storedItems) {
-  //     setNotes(JSON.parse(storedItems));
-  //   }
-  // }, []);
-
-  // function handleRemoveItem(index) {
-  //   notes.splice(index, 1);
-  //   setNotes([...notes]);
-  // }
-
   const storedNotes = noteService.getNotes();
   const [notes, setNotes] = useState(storedNotes);
 
-  const handleRemoveItem = (index) => {
-    setNotes(notes.splice(index, 1));
+  const handleRemoveItem = (id) => {
+    setNotes(notes.filter((note) => note.id !== id));
   };
 
   return (
@@ -43,14 +29,14 @@ function Notes() {
         <Heading>Notes</Heading>
         <NoteWrapper>
           <List aria-labelledby="basic-list-demo">
-            {storedNotes.map((note, index) => (
+            {notes.map((note) => (
               <ListItem key={note.id}>
                 <ListItemText primary={note.savedNote} />
                 <ListItemSecondaryAction>
                   <IconButton
                     edge="end"
                     aria-label="delete"
-                    onClick={() => handleRemoveItem(index)}
+                    onClick={() => handleRemoveItem(note.id)}
                   >
                     <RemoveIcon />
                   </IconButton>
