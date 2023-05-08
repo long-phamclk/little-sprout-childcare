@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import { useState, useEffect } from "react";
 import RemoveIcon from "@mui/icons-material/Remove";
-import noteService from "../../helpers/noteservices";
+import noteService from "../../helpers/noteService";
 
 function Notes() {
   const storedNotes = noteService.getNotes();
