@@ -12,7 +12,7 @@ export default function NoteDialog() {
         <Portal>
           <Overlay />
           <Content>
-            <Title>This is the title</Title>
+            {/* <Title>This is the title</Title> */}
             <NoteForm />
             <CloseButton>Close</CloseButton>
           </Content>

@@ -10,8 +10,9 @@ export default function NoteForm() {
   };
 
   const handleSubmit = () => {
-    noteService.addNote(note);
-    handleClose();
+    if (note.length >= 10) {
+      noteService.addNote(note);
+    }
   };
 
   return (
@@ -19,12 +20,12 @@ export default function NoteForm() {
       <Form.Field>
         <Form.FormMessage>Please leave a note here</Form.FormMessage>
         <Form.Control asChild>
-          <input type="text" onChange={handleChange} />
+          <input type="text" onChange={handleChange} minLength={10} />
         </Form.Control>
-        {/* <Form.ValidityState /> */}
+        <Form.Message match="tooShort">
+          Please provide a valid note
+        </Form.Message>
       </Form.Field>
-
-      {/* <Form.ValidityState /> */}
       <Form.Submit onClick={() => handleSubmit()}>Submit</Form.Submit>
     </Form.Root>
   );
