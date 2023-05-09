@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import buttonStyle from "../utils/buttonStyle";
-import { Button } from "@mui/material";
 import openCLOption from "../utils/openCheckList";
 import submitService from "../helpers/submitService";
 
@@ -28,5 +27,7 @@ const Wrapper = styled.div`
   display: flex;
   margin-left: 50px;
 `;
+
+const Button = styled.button``;
 
 export default SubmitButton;
