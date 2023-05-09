@@ -1,37 +1,38 @@
 import CheckListItem from "./CheckListItem";
 import { useState } from "react";
-import { Button } from "@mui/material";
 import styled from "styled-components";
+import NoteButton from "./NoteButton";
+import SubmitButton from "./SubmitButton";
 
-export default function CheckList({ template }) {
-  const [checklist, setCheckList] = useState(
+export default function CheckList({ template, allChecked, handleCLick }) {
+  const [checkList, setCheckList] = useState(
     template.map((x) => {
       return { ...x, checked: false };
     })
   );
 
   function handleCheck(item) {
-    const nextChecklist = checklist.map((x, i) => {
+    const nextChecklist = checkList.map((x, i) => {
       if (x.id === item.id) return { ...x, checked: !x.checked };
       return x;
     });
-
     setCheckList(nextChecklist);
   }
+  // console.log(checklist);
   return (
     <>
-      {checklist.map((c) => (
+      {/* {checklist.map((c) => (
         <CheckListItem
           key={c.id}
           item={c}
           onCheck={handleCheck}
         ></CheckListItem>
-      ))}
+      ))} */}
+
+      <CheckListItem checkList={checkList} />
       <ButtonWrapper>
         <NoteButton />
-        <Button disabled={!allChecked} onClick={handleCLick}>
-          Submit
-        </Button>
+        <SubmitButton onClick={() => handleCLick} disabled={!allChecked} />
       </ButtonWrapper>
     </>
   );
@@ -41,3 +42,5 @@ const ButtonWrapper = styled.div`
   display: flex;
   margin-top: 25px;
 `;
+
+const Button = styled.button``;

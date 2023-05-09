@@ -1,12 +1,7 @@
-import { useState } from "react";
 import styled from "styled-components";
 import Header from "../../components/Header";
 import BackGroundImg from "../../components/BackGroundImg";
 import Footer from "../../components/Footer";
-import { FormControlLabel, Checkbox, FormGroup } from "@mui/material";
-import openCLOption from "../../utils/openCheckList";
-import SubmitButton from "../../components/SubmitButton";
-import NoteButton from "../../components/NoteButton";
 import { openTemplate } from "../../utils/template";
 import CheckList from "../../components/CheckList";
 
@@ -17,13 +12,9 @@ function OpenCheckList() {
       <BackGroundImg />
       <Wrapper>
         <Heading>Opening checklist</Heading>
-        <StyledFormGroup>
+        <CheckListWrapper>
           <CheckList template={openTemplate}></CheckList>
-        </StyledFormGroup>
-        <ButtonWrapper>
-          <NoteButton />
-          <SubmitButton />
-        </ButtonWrapper>
+        </CheckListWrapper>
       </Wrapper>
       <Footer />
     </>
@@ -44,17 +35,6 @@ const Heading = styled.h2`
   color: hsl(148deg 45% 68%);
 `;
 
-// trying to remove the clickable whitespace around the options
-
-// const FormGroupWrapper = styled.div`
-//   display: contents;
-//   width: 100%;
-// `;
-
-const StyledFormGroup = styled(FormGroup)`
-  margin: auto;
-  margin-top: 25px;
-  width: max-content;
-`;
+const CheckListWrapper = styled.div``;
 
 export default OpenCheckList;

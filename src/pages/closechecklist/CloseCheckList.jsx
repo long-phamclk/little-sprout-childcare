@@ -1,48 +1,20 @@
-import { useState } from "react";
 import styled from "styled-components";
 import Header from "../../components/Header";
 import BackGroundImg from "../../components/BackGroundImg";
 import Footer from "../../components/Footer";
-import { FormControlLabel, Checkbox, FormGroup } from "@mui/material";
-import closeCLOption from "../../utils/closeCheckList";
-import SubmitButton from "../../components/SubmitButton";
-import NoteButton from "../../components/NoteButton";
+import { closeTemplate } from "../../utils/template";
+import CheckList from "../../components/CheckList";
 
 function CloseCheckList() {
-  const [closeOptions, setcloseOptions] = useState(closeCLOption);
-
-  const handleChange = (index) => {
-    // change the boolean value when click and pass the object back
-    const nextCloseOptions = closeOptions.map((x, i) => {
-      if (index == i) return { ...x, checked: !x.checked };
-      return x;
-    });
-
-    setcloseOptions(nextCloseOptions);
-  };
-
   return (
     <>
       <Header />
       <BackGroundImg />
       <Wrapper>
         <Heading>Closing checklist</Heading>
-        <StyledFormGroup>
-          {closeOptions.map((option, index) => (
-            <FormControlLabel
-              key={option.id}
-              label={option.title}
-              control={<Checkbox checked={option.checked} />}
-              onChange={() => {
-                handleChange(index);
-              }}
-            />
-          ))}
-        </StyledFormGroup>
-        <ButtonWrapper>
-          <NoteButton />
-          <SubmitButton />
-        </ButtonWrapper>
+        <CheckListWrapper>
+          <CheckList template={closeTemplate}></CheckList>
+        </CheckListWrapper>
       </Wrapper>
       <Footer />
     </>
@@ -63,22 +35,6 @@ const Heading = styled.h2`
   color: hsl(148deg 45% 68%);
 `;
 
-// trying to remove the clickable whitespace around the options
-
-// const FormGroupWrapper = styled.div`
-//   display: contents;
-//   width: 100%;
-// `;
-
-const StyledFormGroup = styled(FormGroup)`
-  margin: auto;
-  margin-top: 25px;
-  width: max-content;
-`;
-
-const ButtonWrapper = styled.div`
-  display: flex;
-  margin-top: 25px;
-`;
+const CheckListWrapper = styled.div``;
 
 export default CloseCheckList;

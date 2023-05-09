@@ -1,12 +1,16 @@
-import { FormControlLabel, Checkbox } from "@mui/material";
+import styled from "styled-components";
+import { Checkbox } from "@radix-ui/react-checkbox";
 
-export default function CheckListItem({ item, onCheck }) {
+export default function CheckListItem({ checkList, onCheck }) {
   return (
-    <FormControlLabel
-      key={item.id}
-      label={item.title}
-      control={<Checkbox checked={item.checked} />}
-      onChange={(e) => onCheck(item)}
-    />
+    <>
+      <Wrapper>
+        {checkList.map((item) => {
+          return <li key={item.id}>{item.title}</li>;
+        })}
+      </Wrapper>
+    </>
   );
 }
+
+const Wrapper = styled.ul``;
