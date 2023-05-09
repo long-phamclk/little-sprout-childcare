@@ -2,11 +2,10 @@ import styled from "styled-components";
 import Header from "../../components/Header";
 import BackGroundImg from "../../components/BackGroundImg";
 import Footer from "../../components/Footer";
-import { useState, useEffect } from "react";
 
 function History() {
   const checkListHistory = JSON.parse(localStorage.getItem("SubmitList")) || [];
-  // console.log(checkListHistory);
+  console.log(checkListHistory);
 
   // const [checkList, setCheckList] = useState(checkListHistory);
 
@@ -18,8 +17,7 @@ function History() {
         <h2>History</h2>
         <ListWrapper>
           {checkListHistory.map((submit) => {
-            <ListItem key={submit.id}>{submit.savedSubmit}</ListItem>;
-            console.log(submit.savedSubmit);
+            return <ListItem key={submit.id}>{submit.savedSubmit}</ListItem>;
           })}
         </ListWrapper>
       </Wrapper>

@@ -7,22 +7,10 @@ import { FormControlLabel, Checkbox, FormGroup } from "@mui/material";
 import openCLOption from "../../utils/openCheckList";
 import SubmitButton from "../../components/SubmitButton";
 import NoteButton from "../../components/NoteButton";
+import { openTemplate } from "../../utils/template";
+import CheckList from "../../components/CheckList";
 
 function OpenCheckList() {
-  const [checkOptions, setCheckOptions] = useState(openCLOption);
-
-  const handleChange = (index) => {
-    // check the prop we pass in
-    // console.log("index", checkListIndex);
-
-    // change the boolean value when click and pass the object back
-    checkOptions[index].checked = !checkOptions[index].checked;
-    setCheckOptions([...checkOptions]);
-
-    // call out the table of objects from the openCLOption array
-    // console.table(checkOptions);
-  };
-
   return (
     <>
       <Header />
@@ -30,16 +18,7 @@ function OpenCheckList() {
       <Wrapper>
         <Heading>Opening checklist</Heading>
         <StyledFormGroup>
-          {openCLOption.map((option, index) => (
-            <FormControlLabel
-              key={option.id}
-              label={option.title}
-              control={<Checkbox checked={option.checked} />}
-              onChange={() => {
-                handleChange(index);
-              }}
-            />
-          ))}
+          <CheckList template={openTemplate}></CheckList>
         </StyledFormGroup>
         <ButtonWrapper>
           <NoteButton />

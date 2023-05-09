@@ -6,16 +6,7 @@ import { useState, useEffect } from "react";
 import submitService from "../helpers/submitService";
 
 function SubmitButton() {
-  const [isDisabled, setIsDisabled] = useState(true);
-
-  // make the submit button available when all the options is ticked
-  useEffect(() => {
-    if (openCLOption.every((option) => option.checked === true)) {
-      setIsDisabled(false);
-    } else {
-      setIsDisabled(true);
-    }
-  });
+  const allChecked = openCLOption.every((option) => option.checked === true);
 
   const handleCLick = (event) => {
     submitService.addSubmit("Open checklist is submitted at " + new Date());
@@ -23,7 +14,7 @@ function SubmitButton() {
 
   return (
     <Wrapper>
-      <Button sx={buttonStyle} disabled={isDisabled} onClick={handleCLick}>
+      <Button sx={buttonStyle} disabled={!allChecked} onClick={handleCLick}>
         Submit
       </Button>
     </Wrapper>

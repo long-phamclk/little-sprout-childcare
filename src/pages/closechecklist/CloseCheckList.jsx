@@ -13,11 +13,12 @@ function CloseCheckList() {
 
   const handleChange = (index) => {
     // change the boolean value when click and pass the object back
-    closeOptions[index].checked = !closeOptions[index].checked;
-    setcloseOptions([...closeOptions]);
+    const nextCloseOptions = closeOptions.map((x, i) => {
+      if (index == i) return { ...x, checked: !x.checked };
+      return x;
+    });
 
-    // call out the table of objects from the closeCLOption array
-    // console.table(closeOptions);
+    setcloseOptions(nextCloseOptions);
   };
 
   return (
@@ -27,7 +28,7 @@ function CloseCheckList() {
       <Wrapper>
         <Heading>Closing checklist</Heading>
         <StyledFormGroup>
-          {closeCLOption.map((option, index) => (
+          {closeOptions.map((option, index) => (
             <FormControlLabel
               key={option.id}
               label={option.title}
