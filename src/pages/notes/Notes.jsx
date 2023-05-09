@@ -2,16 +2,9 @@ import styled from "styled-components";
 import Header from "../../components/Header";
 import BackGroundImg from "../../components/BackGroundImg";
 import Footer from "../../components/Footer";
-import {
-  List,
-  ListItem,
-  ListItemText,
-  ListItemSecondaryAction,
-  IconButton,
-} from "@mui/material";
-import { useState, useEffect } from "react";
-import RemoveIcon from "@mui/icons-material/Remove";
+import { useState } from "react";
 import noteService from "../../helpers/noteService";
+import NoteList from "../../components/NoteList";
 
 function Notes() {
   const storedNotes = noteService.getNotes();
@@ -33,24 +26,7 @@ function Notes() {
       <BackGroundImg />
       <Wrapper>
         <Heading>Notes</Heading>
-        <NoteWrapper>
-          <List aria-labelledby="basic-list-demo">
-            {notes.map((note, index) => (
-              <ListItem key={note.id}>
-                <ListItemText primary={note.savedNote} />
-                <ListItemSecondaryAction>
-                  <IconButton
-                    edge="end"
-                    aria-label="delete"
-                    onClick={() => handleRemoveItem(note.id, index)}
-                  >
-                    <RemoveIcon />
-                  </IconButton>
-                </ListItemSecondaryAction>
-              </ListItem>
-            ))}
-          </List>
-        </NoteWrapper>
+        <NoteList notes={notes} onClick={handleRemoveItem} />
       </Wrapper>
       <Footer />
     </>
@@ -70,7 +46,5 @@ const Heading = styled.h2`
   font-weight: 600;
   color: hsl(148deg 45% 68%);
 `;
-
-const NoteWrapper = styled.ul``;
 
 export default Notes;

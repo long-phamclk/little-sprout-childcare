@@ -57,9 +57,4 @@ const StyledFormGroup = styled(FormGroup)`
   width: max-content;
 `;
 
-const ButtonWrapper = styled.div`
-  display: flex;
-  margin-top: 25px;
-`;
-
 export default OpenCheckList;
