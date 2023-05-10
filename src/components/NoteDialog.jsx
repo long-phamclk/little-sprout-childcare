@@ -1,10 +1,8 @@
 import * as Dialog from "@radix-ui/react-dialog";
-import { Cross2Icon } from "@radix-ui/react-icons";
 import styled from "styled-components";
 import NoteForm from "./NoteForm";
 
 export default function NoteDialog() {
-  //   console.log(Dialog.Title);
   return (
     <>
       <Wrapper>

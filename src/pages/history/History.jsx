@@ -5,9 +5,6 @@ import Footer from "../../components/Footer";
 
 function History() {
   const checkListHistory = JSON.parse(localStorage.getItem("SubmitList")) || [];
-  console.log(checkListHistory);
-
-  // const [checkList, setCheckList] = useState(checkListHistory);
 
   return (
     <>

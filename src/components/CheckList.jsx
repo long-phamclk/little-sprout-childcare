@@ -1,10 +1,11 @@
-import CheckListItem from "./CheckListItem";
 import { useState } from "react";
 import styled from "styled-components";
 import NoteButton from "./NoteButton";
 import SubmitButton from "./SubmitButton";
+import CheckListItem from "./CheckListItem";
+import { openTemplate, closeTemplate } from "../utils/template";
 
-export default function CheckList({ template, allChecked, handleCLick }) {
+export default function CheckList({ template }) {
   const [checkList, setCheckList] = useState(
     template.map((x) => {
       return { ...x, checked: false };
@@ -12,27 +13,35 @@ export default function CheckList({ template, allChecked, handleCLick }) {
   );
 
   function handleCheck(item) {
-    const nextChecklist = checkList.map((x, i) => {
-      if (x.id === item.id) return { ...x, checked: !x.checked };
-      return x;
+    const nextChecklist = checkList.map((x) => {
+      if (x.id === item.id) {
+        return { ...x, checked: !x.checked };
+      }
+      return { ...x };
     });
     setCheckList(nextChecklist);
   }
-  // console.log(checklist);
+
+  // conditional template to know which one is submitted
+  let currentTemplate;
+  if (template === openTemplate) {
+    currentTemplate = "Open";
+  } else if (template === closeTemplate) {
+    currentTemplate = "Close";
+  }
+  // console.log(template);
+
+  // console.table(checkList);
+
   return (
     <>
-      {/* {checklist.map((c) => (
-        <CheckListItem
-          key={c.id}
-          item={c}
-          onCheck={handleCheck}
-        ></CheckListItem>
-      ))} */}
-
-      <CheckListItem checkList={checkList} />
+      {/* pass item and handleCheck into CheckListItem */}
+      {checkList.map((item) => (
+        <CheckListItem key={item.id} item={item} handleCheck={handleCheck} />
+      ))}
       <ButtonWrapper>
         <NoteButton />
-        <SubmitButton onClick={() => handleCLick} disabled={!allChecked} />
+        <SubmitButton checkList={checkList} currentTemplate={currentTemplate} />
       </ButtonWrapper>
     </>
   );

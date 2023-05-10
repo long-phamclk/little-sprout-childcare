@@ -4,10 +4,6 @@ import styled from "styled-components";
 import NoteDialog from "./NoteDialog";
 
 function NoteButton() {
-  // const [open, setOpen] = useState(false);
-  // const handleOpen = () => setOpen(true);
-  // const handleClose = () => setOpen(false);
-
   return (
     <Wrapper>
       <NoteDialog />

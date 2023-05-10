@@ -2,20 +2,21 @@ import styled from "styled-components";
 import { CheckIcon } from "@radix-ui/react-icons";
 import * as Checkbox from "@radix-ui/react-checkbox";
 
-export default function CheckListItem({ checkList, onCheck }) {
+export default function CheckListItem({ item, handleCheck }) {
+  // console.log(checkList);
+
   return (
     <>
       <Wrapper>
-        {checkList.map((item) => (
-          <li key={item.id}>
-            <CheckBoxWrapper>
-              <CheckBox>
-                <CheckIcon />
-              </CheckBox>
-            </CheckBoxWrapper>
-            {item.title}
-          </li>
-        ))}
+        <CheckBoxWrapper
+          checked={item.checked}
+          onCheckedChange={() => handleCheck(item)}
+        >
+          <CheckBox>
+            <CheckIcon />
+          </CheckBox>
+        </CheckBoxWrapper>
+        {item.title}
       </Wrapper>
     </>
   );

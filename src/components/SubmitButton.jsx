@@ -1,18 +1,20 @@
 import styled from "styled-components";
-import buttonStyle from "../utils/buttonStyle";
-import openCLOption from "../utils/openCheckList";
 import submitService from "../helpers/submitService";
 
-function SubmitButton() {
-  const allChecked = openCLOption.every((option) => option.checked === true);
+export default function SubmitButton({ checkList, currentTemplate }) {
+  const allChecked = checkList.every((option) => option.checked === true);
+
+  // console.log(checkList);
 
   const handleCLick = (event) => {
-    submitService.addSubmit("Open checklist is submitted at " + new Date());
+    submitService.addSubmit(
+      { currentTemplate } + "checklist is submitted at " + new Date()
+    );
   };
 
   return (
     <Wrapper>
-      <Button sx={buttonStyle} disabled={!allChecked} onClick={handleCLick}>
+      <Button onClick={handleCLick} disabled={!allChecked}>
         Submit
       </Button>
     </Wrapper>
@@ -29,5 +31,3 @@ const Wrapper = styled.div`
 `;
 
 const Button = styled.button``;
-
-export default SubmitButton;
