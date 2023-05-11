@@ -10,7 +10,7 @@ function loadDataFromLocalStorage() {
 }
 
 function addData(data) {
-  loadNotesFromLocalStorage();
+  loadDataFromLocalStorage();
   var max = data.length == 0 ? 0 : Math.max(...data.map((x) => x.id || 0));
   data.push({ id: max + 1, savedData: data, dateCreated: new Date() });
   persistToLocationStorage();

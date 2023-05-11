@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import submitService from "../helpers/submitService";
+// import dataService from "../helpers/dataService";
 
 export default function SubmitButton({ checkList, currentTemplate }) {
   const allChecked = checkList.every((option) => option.checked === true);
@@ -10,6 +11,9 @@ export default function SubmitButton({ checkList, currentTemplate }) {
     submitService.addSubmit(
       { currentTemplate } + "checklist is submitted at " + new Date()
     );
+    // dataService.addData(
+    //   { currentTemplate } + "checklist is submitted at " + new Date()
+    // );
   };
 
   return (

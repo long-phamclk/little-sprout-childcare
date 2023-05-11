@@ -20,29 +20,31 @@ export default function NoteDialog() {
   );
 }
 
-const Wrapper = styled(Dialog.Root)``;
+const Wrapper = styled(Dialog.Root)`
+  display: block;
+`;
 
 const TriggerButton = styled(Dialog.Trigger)``;
 
 const Portal = styled(Dialog.Portal)`
-  position: relative;
-  width: 600px;
+  width: 100%;
 
   /* does not auto centering the div
   margin: 500px auto 0 auto;   */
 `;
 
-const Overlay = styled(Dialog.Overlay)`
-  background-color: red;
-`;
+const Overlay = styled(Dialog.Overlay)``;
 
 const Content = styled(Dialog.Content)`
   display: block;
   width: 600px;
   min-height: 300px;
-  position: absolute;
+  position: fixed;
   margin: auto;
-  top: 300px;
+  top: 150px;
+  left: 300px;
+
+  /* left: 250px; */
   background-color: HSL(16deg, 36%, 86%);
 `;
 

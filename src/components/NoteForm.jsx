@@ -1,6 +1,7 @@
 import * as Form from "@radix-ui/react-form";
 import noteService from "../helpers/noteService";
 import { useState } from "react";
+// import dataService from "../helpers/dataService";
 
 export default function NoteForm() {
   const [note, setNote] = useState("");
@@ -12,6 +13,7 @@ export default function NoteForm() {
   const handleSubmit = () => {
     if (note.length >= 10) {
       noteService.addNote(note);
+      // dataService.addData(note);
     }
   };
 

@@ -3,11 +3,13 @@ import Header from "../../components/Header";
 import BackGroundImg from "../../components/BackGroundImg";
 import Footer from "../../components/Footer";
 import { useState } from "react";
-import noteService from "../../helpers/noteService";
+// import noteService from "../../helpers/noteService";
 import NoteList from "../../components/NoteList";
+import dataService from "../../helpers/dataService";
 
 function Notes() {
-  const storedNotes = noteService.getNotes();
+  // const storedNotes = noteService.getNotes();
+  const storedNotes = dataService.getData();
   const [notes, setNotes] = useState(storedNotes);
 
   const handleRemoveItem = (id, index) => {
