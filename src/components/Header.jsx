@@ -7,6 +7,29 @@ function Nav() {
       <Logo>
         <img src="src\assets\logo.png" alt="This is a logo" />
       </Logo>
+      <MenuWrapper>
+        <DropBtn>Menu</DropBtn>
+        <DropContent>
+          <Content>
+            <StyledNavlink to="/">Home</StyledNavlink>
+          </Content>
+          <Content>
+            <StyledNavlink to="/openchecklist">Open Checklist</StyledNavlink>
+          </Content>
+          <Content>
+            <StyledNavlink to="/closechecklist">Close Checklist</StyledNavlink>
+          </Content>
+          <Content>
+            <StyledNavlink to="/notes">Notes</StyledNavlink>
+          </Content>
+          <Content>
+            <StyledNavlink to="/history">History</StyledNavlink>
+          </Content>
+          <Content>
+            <StyledNavlink to="/login">Login</StyledNavlink>
+          </Content>
+        </DropContent>
+      </MenuWrapper>
       <NavButtonWrapper>
         <NavButton>
           <StyledNavlink to="/">Home</StyledNavlink>
@@ -61,6 +84,31 @@ const Logo = styled.div`
 const NavButtonWrapper = styled.ul`
   display: flex;
   max-width: 100%;
+
+  @media (max-width: 600px) {
+    display: none;
+  }
+`;
+
+const MenuWrapper = styled.div`
+  display: none;
+
+  @media (max-width: 600px) {
+    display: block;
+    font-size: ${25 / 16}rem;
+    font-family: "Dosis", sans-serif;
+    font-weight: 600;
+    color: hsl(190deg 67% 4%);
+    padding-right: 50px;
+    float: left;
+    overflow: hidden;
+    position: relative;
+
+    &:hover {
+      cursor: pointer;
+      overflow: visible;
+    }
+  }
 `;
 
 const NavButton = styled.li`
@@ -94,7 +142,7 @@ const DropBtn = styled.button`
 const DropContent = styled.div`
   position: absolute;
   top: 100%;
-  left: 0;
+  left: -30px;
   z-index: 1;
   padding: 0;
   margin: 0;
