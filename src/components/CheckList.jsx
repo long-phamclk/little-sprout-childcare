@@ -3,9 +3,8 @@ import styled from "styled-components";
 import NoteButton from "./NoteButton";
 import SubmitButton from "./SubmitButton";
 import CheckListItem from "./CheckListItem";
-// import { openTemplate, closeTemplate } from "../utils/template";
 
-export default function CheckList({ template }) {
+export default function CheckList({ template, listName }) {
   const [checkList, setCheckList] = useState(
     template.map((x) => {
       return { ...x, checked: false };
@@ -22,14 +21,6 @@ export default function CheckList({ template }) {
     setCheckList(nextChecklist);
   }
 
-  // conditional template to know which one is submitted
-  // let currentTemplate;
-  // if (template === openTemplate) {
-  //   currentTemplate = "Open";
-  // } else if (template === closeTemplate) {
-  //   currentTemplate = "Close";
-  // }
-
   return (
     <>
       {/* pass item and handleCheck into CheckListItem */}
@@ -38,9 +29,7 @@ export default function CheckList({ template }) {
       ))}
       <ButtonWrapper>
         <NoteButton />
-        <SubmitButton
-          checkList={checkList} /*currentTemplate={currentTemplate} */
-        />
+        <SubmitButton checkList={checkList} listName={listName} />
       </ButtonWrapper>
     </>
   );

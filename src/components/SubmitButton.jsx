@@ -3,15 +3,15 @@ import submitService from "../helpers/submitService";
 import { useNavigate } from "react-router-dom";
 // import dataService from "../helpers/dataService";
 
-export default function SubmitButton({ checkList, currentTemplate }) {
+export default function SubmitButton({ checkList, listName }) {
   const allChecked = checkList.every((option) => option.checked === true);
 
-  // console.log(checkList);
   const navigate = useNavigate();
   const handleCLick = (event) => {
     submitService.addSubmit(
-      { currentTemplate } + "checklist is submitted at " + new Date()
+      listName + " checklist is submitted at " + new Date()
     );
+
     navigate("/home");
   };
 

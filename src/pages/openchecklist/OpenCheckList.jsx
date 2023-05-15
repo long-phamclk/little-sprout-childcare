@@ -6,6 +6,7 @@ import { openTemplate } from "../../utils/template";
 import CheckList from "../../components/CheckList";
 
 function OpenCheckList() {
+  let listName = "Open";
   return (
     <>
       <Header />
@@ -13,7 +14,7 @@ function OpenCheckList() {
       <Wrapper>
         <Heading>Opening checklist</Heading>
         <CheckListWrapper>
-          <CheckList template={openTemplate}></CheckList>
+          <CheckList template={openTemplate} listName={listName}></CheckList>
         </CheckListWrapper>
       </Wrapper>
       <Footer />

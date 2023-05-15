@@ -43,6 +43,8 @@ const ListItem = styled.li`
   width: max-content;
   height: auto;
   margin-top: 5px;
+  font-family: "Dosis", sans-serif;
+  font-size: ${20 / 16}rem;
 `;
 
 export default History;

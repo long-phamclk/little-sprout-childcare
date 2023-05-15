@@ -6,6 +6,7 @@ import { closeTemplate } from "../../utils/template";
 import CheckList from "../../components/CheckList";
 
 function CloseCheckList() {
+  const listName = "Close";
   return (
     <>
       <Header />
@@ -13,7 +14,7 @@ function CloseCheckList() {
       <Wrapper>
         <Heading>Closing checklist</Heading>
         <CheckListWrapper>
-          <CheckList template={closeTemplate}></CheckList>
+          <CheckList template={closeTemplate} listName={listName}></CheckList>
         </CheckListWrapper>
       </Wrapper>
       <Footer />
