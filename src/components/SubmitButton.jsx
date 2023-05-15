@@ -1,12 +1,13 @@
 import styled from "styled-components";
 import submitService from "../helpers/submitService";
+import { useNavigate } from "react-router-dom";
 // import dataService from "../helpers/dataService";
 
 export default function SubmitButton({ checkList, currentTemplate }) {
   const allChecked = checkList.every((option) => option.checked === true);
 
   // console.log(checkList);
-
+  const navigate = useNavigate();
   const handleCLick = (event) => {
     submitService.addSubmit(
       { currentTemplate } + "checklist is submitted at " + new Date()
@@ -14,6 +15,7 @@ export default function SubmitButton({ checkList, currentTemplate }) {
     // dataService.addData(
     //   { currentTemplate } + "checklist is submitted at " + new Date()
     // );
+    navigate("/home");
   };
 
   return (

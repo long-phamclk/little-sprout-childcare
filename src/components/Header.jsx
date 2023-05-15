@@ -14,8 +14,14 @@ function Nav() {
         <DropDown>
           <DropBtn>Checklist</DropBtn>
           <DropContent>
-            <Content to="/openchecklist">Open Checklist</Content>
-            <Content to="/closechecklist">Close Checklist</Content>
+            <Content>
+              <StyledNavlink to="/openchecklist">Open Checklist</StyledNavlink>
+            </Content>
+            <Content>
+              <StyledNavlink to="/closechecklist">
+                Close Checklist
+              </StyledNavlink>
+            </Content>
           </DropContent>
         </DropDown>
         <NavButton>
@@ -94,9 +100,9 @@ const DropContent = styled.div`
   margin: 0;
 `;
 
-const Content = styled(Link)`
+const Content = styled.div`
   float: none;
-  padding: 12px 16px;
+  padding: 6px 12px;
   text-decoration: none;
   display: block;
   text-align: left;
@@ -106,14 +112,14 @@ const Content = styled(Link)`
   width: max-content;
 
   &:hover {
-    background-color: #3a3012f6;
+    background-color: #877c5bf6;
     color: white;
   }
 `;
 
 const StyledNavlink = styled(NavLink)`
   &.active {
-    color: white;
+    color: #a63434cf;
   }
 `;
 
