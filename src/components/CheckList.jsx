@@ -3,7 +3,7 @@ import styled from "styled-components";
 import NoteButton from "./NoteButton";
 import SubmitButton from "./SubmitButton";
 import CheckListItem from "./CheckListItem";
-import { openTemplate, closeTemplate } from "../utils/template";
+// import { openTemplate, closeTemplate } from "../utils/template";
 
 export default function CheckList({ template }) {
   const [checkList, setCheckList] = useState(

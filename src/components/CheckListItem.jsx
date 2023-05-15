@@ -16,7 +16,7 @@ export default function CheckListItem({ item, handleCheck }) {
             <CheckIcon />
           </CheckBox>
         </CheckBoxWrapper>
-        {item.title}
+        <Content>{item.title}</Content>
       </Wrapper>
     </>
   );
@@ -37,4 +37,8 @@ const CheckBox = styled(Checkbox.Indicator)`
   position: relative;
   right: 6px;
   bottom: 2px;
+`;
+
+const Content = styled.div`
+  margin-left: 10px;
 `;

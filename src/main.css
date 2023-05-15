@@ -1,4 +1,17 @@
+html {
+    height: 100%;
+    margin: 0;
+}
+body {
+    min-height: 100%;
+    margin: 0;
+}
 
+body {
+	height: 100vh;
+	width: 100vw;
+  }
+  
 
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -19,6 +32,7 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
+
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -60,3 +74,5 @@ table {
   line-height: 26 / 16;
   font-weight: 500;
 }
+
+

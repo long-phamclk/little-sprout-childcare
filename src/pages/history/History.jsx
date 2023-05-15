@@ -11,7 +11,7 @@ function History() {
       <Header />
       <BackGroundImg />
       <Wrapper>
-        <h2>History</h2>
+        <Heading>History</Heading>
         <ListWrapper>
           {checkListHistory.map((submit) => {
             return <ListItem key={submit.id}>{submit.savedSubmit}</ListItem>;
@@ -25,16 +25,24 @@ function History() {
 
 const Wrapper = styled.div`
   width: 900px;
-  height: auto;
+  height: 100%;
+  margin: auto;
+  margin-top: 25px;
 `;
 
-const ListWrapper = styled.ul`
-  display: block;
+const Heading = styled.h2`
+  font-family: "Dosis", sans-serif;
+  font-size: ${30 / 16}rem;
+  font-weight: 600;
+  color: hsl(148deg 45% 68%);
 `;
+
+const ListWrapper = styled.ul``;
 
 const ListItem = styled.li`
   width: max-content;
   height: auto;
+  margin-top: 5px;
 `;
 
 export default History;
