@@ -12,9 +12,6 @@ export default function SubmitButton({ checkList, currentTemplate }) {
     submitService.addSubmit(
       { currentTemplate } + "checklist is submitted at " + new Date()
     );
-    // dataService.addData(
-    //   { currentTemplate } + "checklist is submitted at " + new Date()
-    // );
     navigate("/home");
   };
 
@@ -34,6 +31,23 @@ const Wrapper = styled.div`
   border-radius: 10px;
   display: flex;
   margin-left: 50px;
+  overflow: hidden;
 `;
 
-const Button = styled.button``;
+const Button = styled.button`
+  margin: auto;
+  padding: 5px 69px;
+  width: max-content;
+  border: none;
+  background-color: hsl(0deg 0% 85%);
+  font-weight: 600;
+  font-size: ${20 / 16}rem;
+  border-radius: 10px;
+  color: black;
+  cursor: pointer;
+
+  :disabled {
+    color: grey;
+    cursor: auto;
+  }
+`;

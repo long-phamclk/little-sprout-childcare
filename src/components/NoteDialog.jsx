@@ -20,11 +20,19 @@ export default function NoteDialog() {
   );
 }
 
-const Wrapper = styled(Dialog.Root)`
-  display: block;
-`;
+const Wrapper = styled(Dialog.Root)``;
 
-const TriggerButton = styled(Dialog.Trigger)``;
+const TriggerButton = styled(Dialog.Trigger)`
+  margin: auto;
+  padding: 5px 45px;
+  width: max-content;
+  border: none;
+  background-color: hsl(0deg 0% 85%);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: ${20 / 16}rem;
+  border-radius: 10px;
+`;
 
 const Portal = styled(Dialog.Portal)`
   width: 100%;

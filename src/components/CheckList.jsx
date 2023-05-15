@@ -23,15 +23,12 @@ export default function CheckList({ template }) {
   }
 
   // conditional template to know which one is submitted
-  let currentTemplate;
-  if (template === openTemplate) {
-    currentTemplate = "Open";
-  } else if (template === closeTemplate) {
-    currentTemplate = "Close";
-  }
-  // console.log(template);
-
-  // console.table(checkList);
+  // let currentTemplate;
+  // if (template === openTemplate) {
+  //   currentTemplate = "Open";
+  // } else if (template === closeTemplate) {
+  //   currentTemplate = "Close";
+  // }
 
   return (
     <>
@@ -41,7 +38,9 @@ export default function CheckList({ template }) {
       ))}
       <ButtonWrapper>
         <NoteButton />
-        <SubmitButton checkList={checkList} currentTemplate={currentTemplate} />
+        <SubmitButton
+          checkList={checkList} /*currentTemplate={currentTemplate} */
+        />
       </ButtonWrapper>
     </>
   );

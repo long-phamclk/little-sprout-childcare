@@ -22,14 +22,19 @@ export default function CheckListItem({ item, handleCheck }) {
   );
 }
 
-const Wrapper = styled.ul``;
+const Wrapper = styled.div`
+  display: flex;
+  margin-top: 10px;
+`;
 
 const CheckBoxWrapper = styled(Checkbox.Root)`
-  display: inline-block;
   width: 15px;
   height: 15px;
 `;
 
 const CheckBox = styled(Checkbox.Indicator)`
   width: 100%;
+  position: relative;
+  right: 6px;
+  bottom: 2px;
 `;
