@@ -1,10 +1,4 @@
-*,
-*:before,
-*:after {
-  font-family: "Dosis", sans-serif;
-  box-sizing: border-box;
-  color: black;
-}
+
 
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -57,3 +51,12 @@ table {
 }
 
 
+*,
+*:before,
+*:after {
+  font-family: "Dosis", sans-serif;
+  box-sizing: border-box;
+  color: black;
+  line-height: 26 / 16;
+  font-weight: 500;
+}

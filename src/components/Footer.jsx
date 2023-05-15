@@ -36,17 +36,9 @@ const FooterBox = styled.div`
   display: flex;
 `;
 
-const Company = styled.div`
-  font-family: "Dosis", sans-serif;
-  font-weight: 500;
-  line-height: ${26 / 16};
-`;
+const Company = styled.div``;
 
 const Contact = styled.div`
-  font-family: "Dosis", sans-serif;
-  font-weight: 500;
-  line-height: ${26 / 16};
-
   img {
     margin-right: 5px;
   }

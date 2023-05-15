@@ -22,12 +22,8 @@ function Body() {
         </Article>
         <LineBox></LineBox>
         <ListButtonWrapper>
-          <OpeningListButton to="/openchecklist">
-            Opening Checklist
-          </OpeningListButton>
-          <ClosingListButton to="/closechecklist">
-            Closing Checklist
-          </ClosingListButton>
+          <ListButton to="/openchecklist">Opening Checklist</ListButton>
+          <ListButton to="/closechecklist">Closing Checklist</ListButton>
         </ListButtonWrapper>
       </Wrapper>
       <Footer />
@@ -41,7 +37,6 @@ const Wrapper = styled.section`
 
 const Heading = styled.h2`
   display: block;
-  font-family: "Dosis", sans-serif;
   font-size: ${35 / 16}rem;
   font-weight: 600;
   color: hsl(148deg 45% 68%);
@@ -78,19 +73,7 @@ const ListButtonWrapper = styled.div`
   margin-top: 50px;
 `;
 
-const OpeningListButton = styled(Link)`
-  font-family: "Dosis", sans-serif;
-  font-size: ${25 / 16}rem;
-  font-weight: 600;
-  padding: 15px 40px;
-  background-color: hsl(0deg 0% 85%);
-  width: 285px;
-  border-radius: 10px;
-  text-align: center;
-  text-decoration: none;
-`;
-
-const ClosingListButton = styled(Link)`
+const ListButton = styled(Link)`
   font-family: "Dosis", sans-serif;
   font-size: ${25 / 16}rem;
   font-weight: 600;

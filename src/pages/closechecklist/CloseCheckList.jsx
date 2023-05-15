@@ -29,7 +29,6 @@ const Wrapper = styled.div`
 `;
 
 const Heading = styled.h2`
-  font-family: "Dosis", sans-serif;
   font-size: ${30 / 16}rem;
   font-weight: 600;
   color: hsl(148deg 45% 68%);

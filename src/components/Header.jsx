@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 function Nav() {
   return (
@@ -9,7 +9,7 @@ function Nav() {
       </Logo>
       <NavButtonWrapper>
         <NavButton>
-          <a href="/">Home</a>
+          <StyledNavlink to="/">Home</StyledNavlink>
         </NavButton>
         <DropDown>
           <DropBtn>Checklist</DropBtn>
@@ -19,13 +19,13 @@ function Nav() {
           </DropContent>
         </DropDown>
         <NavButton>
-          <a href="/notes">Notes</a>
+          <StyledNavlink to="/notes">Notes</StyledNavlink>
         </NavButton>
         <NavButton>
-          <a href="/history">History</a>
+          <StyledNavlink to="/history">History</StyledNavlink>
         </NavButton>
         <NavButton>
-          <a href="/login">Login</a>
+          <StyledNavlink to="/login">Login</StyledNavlink>
         </NavButton>
       </NavButtonWrapper>
     </Wrapper>
@@ -77,14 +77,12 @@ const DropDown = styled.div`
 
 const DropBtn = styled.button`
   font-size: ${25 / 16}rem;
-  font-family: "Dosis", sans-serif;
   font-weight: 500;
   padding: 0 25px 0 0;
   border: 0;
   line-height: 1;
   background-color: HSL(16deg, 36%, 86%);
   cursor: pointer;
-  color: #551a8b;
 `;
 
 const DropContent = styled.div`
@@ -98,7 +96,6 @@ const DropContent = styled.div`
 
 const Content = styled(Link)`
   float: none;
-  color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
@@ -107,10 +104,15 @@ const Content = styled(Link)`
   font-family: "Dosis", sans-serif;
   font-weight: 500;
   width: max-content;
-  color: #551a8b;
 
   &:hover {
     background-color: #3a3012f6;
+    color: white;
+  }
+`;
+
+const StyledNavlink = styled(NavLink)`
+  &.active {
     color: white;
   }
 `;
