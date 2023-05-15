@@ -8,9 +8,13 @@ function Login() {
     <>
       <Header />
       <BackGroundImg />
+      <Wrapper></Wrapper>
       <Footer />
     </>
   );
 }
 
+const Wrapper = styled.div`
+  min-height: 22vh;
+`;
 export default Login;

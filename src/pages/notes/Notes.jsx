@@ -39,7 +39,7 @@ const Wrapper = styled.div`
   max-width: 900px;
   margin: auto;
   margin-top: 25px;
-  height: 100%;
+  min-height: 19vh;
 `;
 
 const Heading = styled.h2`

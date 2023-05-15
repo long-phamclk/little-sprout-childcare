@@ -25,7 +25,7 @@ function History() {
 
 const Wrapper = styled.div`
   width: 900px;
-  height: 100%;
+  min-height: 19vh;
   margin: auto;
   margin-top: 25px;
 `;
