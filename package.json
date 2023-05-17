@@ -7,8 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview --port 8080",
-    "start": "vite preview --port 8080"
+    "preview": "vite preview --port 0.0.0.0",
+    "start": "vite preview --port 0.0.0.0"
   },
   "dependencies": {
     "@radix-ui/react-checkbox": "^1.0.3",
