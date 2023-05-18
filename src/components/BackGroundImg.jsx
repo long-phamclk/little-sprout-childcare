@@ -1,9 +1,10 @@
 import styled from "styled-components";
+import backgroundimg from "../assets/backgroundimg.png";
 
 function BackGroundImg() {
   return (
     <Wrapper>
-      <Img src="src/assets/backgroundimg.png" alt="Background IMG" />
+      <Img src={backgroundimg} alt="Background IMG" />
     </Wrapper>
   );
 }

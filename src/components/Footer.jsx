@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import email from "../assets/email.png";
+import phone from "../assets/phone.png";
 
 function Footer() {
   return (
@@ -8,10 +10,10 @@ function Footer() {
           Copy right 2023 <br /> Little Sprout Childcare
         </Company>
         <Contact>
-          <img src="src\assets\phone.png" alt="this is a phone icon" />
+          <img src={phone} alt="this is a phone icon" />
           0497 xx xxx
           <br />
-          <img src="src\assets\email.png" alt="this is an email icon" />
+          <img src={email} alt="this is an email icon" />
           chiliki.long@gmail.com
         </Contact>
       </FooterBox>

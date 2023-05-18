@@ -1,11 +1,12 @@
 import styled from "styled-components";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import logo from "../assets/logo.png";
 
 function Nav() {
   return (
     <Wrapper>
       <Logo>
-        <img src="src\assets\logo.png" alt="This is a logo" />
+        <img src={logo} alt="A logo" />
       </Logo>
       <MenuWrapper>
         <DropBtn>Menu</DropBtn>
