@@ -12,7 +12,6 @@ export default function NoteDialog() {
           <Content>
             {/* <Title>This is the title</Title> */}
             <NoteForm />
-            <CloseButton>Close</CloseButton>
           </Content>
         </Portal>
       </Wrapper>
@@ -44,20 +43,17 @@ const Portal = styled(Dialog.Portal)`
 const Overlay = styled(Dialog.Overlay)``;
 
 const Content = styled(Dialog.Content)`
-  display: block;
-  width: 600px;
-  min-height: 300px;
+  width: 400px;
+  height: 200px;
   position: fixed;
   margin: auto;
-  top: 150px;
+  top: 100px;
   left: 300px;
-
-  /* left: 250px; */
   background-color: HSL(16deg, 36%, 86%);
-`;
+  border-radius: 10px;
 
-const Title = styled(Dialog.Title)`
-  font-size: ${26 / 16}rem;
+  @media (max-width: 800px) {
+    top: 100px;
+    left: 100px;
+  }
 `;
-
-const CloseButton = styled(Dialog.Close)``;
