@@ -3,7 +3,7 @@ import styled from "styled-components";
 function BackGroundImg() {
   return (
     <Wrapper>
-      <Img src="src\assets\backgroundimg.png" alt="" />
+      <Img src="src/assets/backgroundimg.png" alt="Background IMG" />
     </Wrapper>
   );
 }
