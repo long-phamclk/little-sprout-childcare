@@ -3,11 +3,28 @@ import styled from "styled-components";
 import NoteButton from "./NoteButton";
 import SubmitButton from "./SubmitButton";
 import CheckListItem from "./CheckListItem";
+import { randomNumber } from "../utils/utils";
 
-export default function CheckList({ template, listName }) {
+/* 
+CheckList object = {
+  id: number, 
+  dateCreated: datetime,
+  dateSubmitted: datetime,
+  items: CheckListItem[]
+}
+
+CheckListItem object = {
+  title: string,
+  checked: boolean
+}
+
+
+*/
+
+export default function CheckList({ key, template, listName }) {
   const [checkList, setCheckList] = useState(
     template.map((x) => {
-      return { ...x, checked: false };
+      return { ...x, id: randomNumber(), checked: false };
     })
   );
 
