@@ -15,6 +15,9 @@ run project with prompt "npm run dev"
 # Web routes
 homepage =>  http://127.0.0.1:5173/
 
+# Figma design 
+https://www.figma.com/file/86ouR35MdtT110vMGziyND/Daily-checklist?type=design&node-id=0-1&t=dmE84nlvgzw9LOhY-0
+
 
 MIT License
 
