@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import logo from "../assets/logo.png";
+import menu from "../assets/menu.png";
 
 function Nav() {
   return (
@@ -9,7 +10,9 @@ function Nav() {
         <img src={logo} alt="A logo" />
       </Logo>
       <MenuWrapper>
-        <DropBtn>Menu</DropBtn>
+        <DropBtn>
+          <img src={menu} alt="Menu logo" />
+        </DropBtn>
         <DropContent>
           <Content>
             <StyledNavlink to="/">Home</StyledNavlink>
